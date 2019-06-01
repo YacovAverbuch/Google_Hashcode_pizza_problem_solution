@@ -30,17 +30,17 @@ The problem statement is placed in `pizza.pdf` file. All data provided by Google
 # Results
 Full solution is in `output_data` directory.
 
-The run on the medium data take some minute, while on the big data it took up to half an hour
+The run on the medium data take some minute, while on the big data it took up to half an hour. 
 
 Here are the points:
 
-| Case      | Points |
-|-----------|--------|
-| example   | 15     |
-| small     | 39     |
-| medium    | 48904  |
-| big       | 901750 |
-| **TOTAL** | 950708 |
+| Case      | Points | Out of  |
+|-----------|--------|---------|
+| example   | 15     | 15      |
+| small     | 39     | 42      |
+| medium    | 48904  | 50000   |
+| big       | 901750 | 1000000 |
+| **TOTAL** | 950708 |         |
 
 
 
