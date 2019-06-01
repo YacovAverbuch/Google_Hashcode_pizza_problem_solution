@@ -3,25 +3,32 @@ This is my solution for the test round problem of 2018 Google Hashcode challenge
 I have seen the excellent solution written by tompil https://github.com/tompil/Google-Hashcode-Pizza-Problem-Solution
 which runs over the cells of the pizza and cut slices for each cell when it posible.
 After the first process the final-slices vector created. in the second process it try to
-extend all the slices where it posible.
+extend all the slices where it possible.
 
-I am tring to solve it by ranking the slices - (groups of pixels) according to the number of other groups it share.
+I try to solve it by ranking the slices - (groups of pixels) according to the number of other groups it share.
 
 **The algorithm is:**
-**1.** Go over the size of slice restrictions and biuld all the posible shapes for slice.
-for example, if min_each is 2 and max is 6, then the num of pixelsin slices is between 4-6.
+**1.** Go over the size of slice restrictions and build all the possible shapes for slice.
+for example, if min_each is 2 and max cells in group is 6, then the num of pixels in slices is between 4-6.
 because the slices are rectangular we get 9 shapes possible
 
-**2.** For each pixel try to build group that start with that pixel for every shape. if such group is legal,
+**2.** For each pixel on the grid try to build group that start with that pixel for every shape. if such group is legal,
 append it to legal gruops.
 
-**3.** Rank all the groups according to the num of other groups it share.
+**3.** Rank each group according to the number of other groups it share cells with.
 
-**4.** Add negative rank for slim groups. slim group is more likely to be extendable at the end of.
+**4.** Add negative rank for slim groups. slim group is more likely to be extendable after we choose the final groups
 
-**5.** Chose the groups with the least rank.
+**5.** Choose the groups with the least rank one by one. when choose group:
+    1. delete it from the set of legel groups.
+    2. delete every group that hold any of the cells inside the group you choose.
+    3. for every group that hed shared cells with any of the deleted groups, correct it score according to the number of 
+    the deleted groups it is not share anymore.
 
 **6.** Try to extend groups.
+
+I implement stage 3 by multi - threading with 4 threads working simultaneously. whereas stage 5 that take the majority 
+of the time, is more dificult to imlement in multi threading, and I doubt if it can shortern the running time significantly.
 
 
 # The problem
