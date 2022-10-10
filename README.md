@@ -1,7 +1,11 @@
 This is my solution for the test round problem of 2018 Google Hashcode challenge.
 
+# The problem
+The problem statement is placed in `pizza.pdf` file. All data provided by Google are in
+`input_data` directory.
+
 I have seen the excellent solution written by tompil https://github.com/tompil/Google-Hashcode-Pizza-Problem-Solution
-which runs over the cells of the pizza and cut slices for each cell when it posible.
+which runs over the cells of the pizza and cut slices for each cell when it possible.
 After the first process the final-slices vector created. in the second process it try to
 extend all the slices where it possible.
 
@@ -30,10 +34,6 @@ append it to legal gruops.
 I implement stage 3 by multi - threading with 4 threads working simultaneously. whereas stage 5 that take the majority 
 of the time, is more dificult to imlement in multi threading, and I doubt if it can shortern the running time significantly.
 
-
-# The problem
-The problem statement is placed in `pizza.pdf` file. All data provided by Google are in
-`input_data` directory.
 # Results
 Full solution is in `output_data` directory.
 
